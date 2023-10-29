@@ -31,7 +31,7 @@ import numpy as np
 from PIL import Image
 
 # Define the directory path
-dir_path = 'data'
+dir_path = '../data'
 
 # Initialize an empty list to store the file contents
 file_contents = []
@@ -60,9 +60,11 @@ def corrupted_img(img2):
     try:
         with Image.open(img2) as img:
             img.verify()
-    except (IOError, SyntaxError) as e:
-        os.remove(img2)
-        print("deleted corrupted image")
+    except Exception as e:
+        print("damn")
+    # except (IOError, SyntaxError) as e:
+    #     os.remove(img2)
+    #     print("deleted corrupted image")
 
 # 0 - COMPARE IMAGE DELETION ACC TO IMGUR TEMPLATE
 # 1 - MP4, GIF DELETION
